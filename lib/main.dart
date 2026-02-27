@@ -4,6 +4,8 @@ import 'package:provider1/data_parsing/profile.dart';
 import 'package:provider1/home_page_provider.dart';
 import 'package:provider1/home_provider.dart';
 import 'package:provider1/homepage.dart';
+import 'package:provider1/listpage/display_page.dart';
+import 'package:provider1/listpage/formpage.dart';
 import 'package:provider1/listpage/list_page.dart';
 import 'package:provider1/listpage/list_provider.dart';
 
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => ListProvider())
         ],
       child: MaterialApp(debugShowCheckedModeBanner: false,
-        home: ListPage(),
+        home: Display(),
         ),
     );
       }
