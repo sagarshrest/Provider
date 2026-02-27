@@ -13,13 +13,23 @@ class _DisplayState extends State<Display> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Consumer <ListProvider>(builder: (context, listProvider, child) => Column(
-        children: [
-          Text("name:${listProvider.name}"),
-          Text("name:${listProvider.age}"),
-          Text("name:${listProvider.address}")
-        ],
-      )),
+      body: Center(
+        child: Consumer<ListProvider>(builder: (context, listProvider,child){
+          Students s1 = listProvider.studentlist[1];
+          String? name = s1.name;
+          String? rollnum = s1.rollnum;
+          String? address = s1.address;
+        
+          return Column(mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(name??""),
+              Text(rollnum??""),
+              Text(address??""),
+              
+            ],
+          );
+        }),
+      )
     );
   }
 }
