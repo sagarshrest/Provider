@@ -1,8 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:provider1/Student/add_student.dart';
-import 'package:provider1/Student/student_provider.dart';
+import 'package:provider1/Student/screen/add_student.dart';
+import 'package:provider1/Student/provider/student_provider.dart';
+import 'package:provider1/Student/screen/student_page.dart';
 import 'package:provider1/data_parsing/profile.dart';
 import 'package:provider1/firebase_options.dart';
 import 'package:provider1/home_page_provider.dart';
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => StudentProvider())
         ],
       child: MaterialApp(debugShowCheckedModeBanner: false,
-        home:AddStudent (),
+        home:StudentPage (),
         ),
     );
       }
