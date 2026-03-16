@@ -33,10 +33,13 @@ void addstudent() async{
 
   void fetchStudent() async {
     try {
+      studentlist.clear();
       await _firestore.collection('students').get().then((data){
+        
         for (var student in data.docs) {
           studentlist.add(
             Student(
+              id: student.id,
             name: student["name"],
             age: student["age"] ,
            address: student["address"]),
@@ -54,5 +57,20 @@ void addstudent() async{
     }
     notifyListeners();
   }
+
+void delstudent(String id) async {
+  try {
+    await _firestore.collection('students').doc(id).delete();
+studentlist.clear();  
+    fetchStudent();
+    notifyListeners();
+  }
+  
+  catch (e) {
+    print(e.toString());
+
+  }
+}
+
 }
 
