@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => StudentProvider())
         ],
       child: MaterialApp(debugShowCheckedModeBanner: false,
-        home:StudentPage (),
+        home:AddStudent (),
         ),
     );
       }
