@@ -34,17 +34,30 @@ class _StudentPageState extends State<StudentPage> {
                   String name = studentProvider.studentlist[index].name;
                   String age = studentProvider.studentlist[index].age.toString();
                   String address = studentProvider.studentlist[index].address;
+                  String id = studentProvider.studentlist[index].id;
 
                 return Container(
                   height: 100,
                   width: double.infinity,
-                  color: Colors.red,
+                  color: Colors.green,
                   margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                  child: Column(
+                  child: Row(
                     children: [
-                      Text('Name:$name'),
-                      Text('Age:$age'),
-                      Text('Address:$address')
+                      Column(
+
+                        children: [
+                          Text('Name:$name'),
+                          Text('Age:$age'),
+                          Text('Address:$address')
+                        ],
+                      ),
+                      Spacer(),
+
+                      IconButton(onPressed: (){
+                      }, icon: (Icon(Icons.edit))),
+                      IconButton(onPressed: (){
+                        studentProvider.delstudent(id);
+                      }, icon: Icon(Icons.delete))
                     ],
                   ),
                 );
