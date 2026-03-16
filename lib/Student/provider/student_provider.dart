@@ -65,7 +65,6 @@ studentlist.clear();
     fetchStudent();
     notifyListeners();
   }
-  
   catch (e) {
     print(e.toString());
 
