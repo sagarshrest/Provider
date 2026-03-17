@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider1/Student/provider/student_provider.dart';
+import 'package:provider1/Student/screen/update_student.dart';
 
 class StudentPage extends StatefulWidget {
   const StudentPage({super.key});
@@ -54,6 +55,8 @@ class _StudentPageState extends State<StudentPage> {
                       Spacer(),
 
                       IconButton(onPressed: (){
+                        Navigator.push(context, 
+                        MaterialPageRoute(builder: (_)=> UpdateStudent(id: id, name: name, age: age, address: address)));
                       }, icon: (Icon(Icons.edit))),
                       IconButton(onPressed: (){
                         studentProvider.delstudent(id);
